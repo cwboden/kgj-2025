@@ -12,7 +12,6 @@ signal try_plug_in()
 # when plugging into an outlet is successful, connecting active cables
 signal plug_in()
 
-
 enum Ability {
 	JUMP,
 	DASH,

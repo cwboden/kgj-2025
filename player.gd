@@ -87,6 +87,7 @@ func _try_lay_cable(drop_position):
 	if is_carrying:
 		_lay_cable(drop_position)
 		if is_plugging_in:
+			print("plugging in!")
 			Events.plug_in.emit()
 			is_carrying = false
 
@@ -110,6 +111,7 @@ func _on_try_plug_in():
 
 
 func _on_set_ability(type: Events.Ability, is_active: bool):
+	print("setting ability")
 	match type:
 		Events.Ability.JUMP:
 			can_jump = is_active

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bblimxojafocm"]
 
-[ext_resource type="Script" path="res://components/cable.gd" id="1_ktp8h"]
+[ext_resource type="Script" uid="uid://5r18568q8hq7" path="res://components/cable.gd" id="1_ktp8h"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_l8stc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktp8h"]

@@ -10,6 +10,7 @@ func _input(event: InputEvent) -> void:
 			label.hide()
 			await interactions[0].interact.call()
 		else:
+			print("dropping plug")
 			Events.drop_plug.emit()
 
 func _process(_delta: float) -> void:
