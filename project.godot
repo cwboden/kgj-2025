@@ -21,7 +21,8 @@ Globals="*res://Globals.gd"
 
 [display]
 
-window/size/viewport_height=640
+window/size/viewport_width=1100
+window/size/viewport_height=900
 window/dpi/allow_hidpi=false
 
 [input]
