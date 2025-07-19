@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://dkafvga6wjndr"]
+[gd_scene load_steps=12 format=4 uid="uid://dkafvga6wjndr"]
 
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_8ko2f"]
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_kko32"]
+[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_0t2w6"]
 [ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="3_05h6q"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="3_7jv6q"]
 [ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="4_ou7rt"]
 [ext_resource type="PackedScene" uid="uid://c7nagjm2hqkaf" path="res://systems/spawner.tscn" id="6_ibkq5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sor6q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um4do"]
 texture = ExtResource("1_kko32")
 margins = Vector2i(16, 30)
 texture_region_size = Vector2i(67, 64)
@@ -278,7 +279,7 @@ texture_region_size = Vector2i(67, 64)
 5:31/0 = 0
 6:31/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlwl7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftd6n"]
 texture = ExtResource("1_8ko2f")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
@@ -386,16 +387,17 @@ texture_region_size = Vector2i(64, 64)
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bwl5r"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_v1cf3"]
+scenes/1/scene = ExtResource("3_0t2w6")
 scenes/2/scene = ExtResource("3_05h6q")
 scenes/3/scene = ExtResource("4_ou7rt")
 
 [sub_resource type="TileSet" id="TileSet_ku0ah"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_rlwl7")
-sources/0 = SubResource("TileSetAtlasSource_sor6q")
-sources/2 = SubResource("TileSetScenesCollectionSource_bwl5r")
+sources/1 = SubResource("TileSetAtlasSource_ftd6n")
+sources/0 = SubResource("TileSetAtlasSource_um4do")
+sources/2 = SubResource("TileSetScenesCollectionSource_v1cf3")
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-204.0]
@@ -416,7 +418,7 @@ tile_set = SubResource("TileSet_ku0ah")
 
 [node name="Overworld_Objects" type="TileMapLayer" parent="."]
 position = Vector2(317, 1)
-tile_map_data = PackedByteArray("AAD8/wgAAQAGAAUAAAD+/wgAAQAGAAUAAAAAAAgAAQAGAAUAAAAKAAwAAQAGAAQAAAAJAAwAAQAGAAQAAAAIAAwAAQAGAAQAAAD8/woAAQADAAMAAAD9/woAAQADAAMAAAD+/woAAQADAAMAAAD//woAAQADAAMAAAAAAAoAAQADAAMAAAABAAoAAQADAAMAAAACAAwAAgAAAAAAAwACAAkAAgAAAAAAAwD7/wMAAgAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAD8/wgAAQAGAAUAAAD+/wgAAQAGAAUAAAAAAAgAAQAGAAUAAAAKAAwAAQAGAAQAAAAJAAwAAQAGAAQAAAAIAAwAAQAGAAQAAAD8/woAAQADAAMAAAD9/woAAQADAAMAAAD+/woAAQADAAMAAAD//woAAQADAAMAAAAAAAoAAQADAAMAAAABAAoAAQADAAMAAAACAAwAAgAAAAAAAwACAAkAAgAAAAAAAwD7/wMAAgAAAAAAAwD7/wYAAgAAAAAAAQA=")
 tile_set = SubResource("TileSet_ku0ah")
 rendering_quadrant_size = 9
 
