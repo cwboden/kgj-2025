@@ -5,20 +5,12 @@ extends StaticBody2D
 @onready var sprite = $Sprite2D
 
 var is_connected := false
-var is_grabbed := false
 
 func _ready():
 	interactable.interact = _on_interact
-	Events.plug_in.connect(_on_plug_in)
-
 
 func _on_interact():
 	if not is_connected:
-		is_grabbed = true
-		Events.grab_plug.emit()
-		
-
-func _on_plug_in():
-	if is_grabbed:
+		Events.try_plug_in.emit()
 		is_connected = true
 	

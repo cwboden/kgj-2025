@@ -1,8 +1,9 @@
 extends Area2D
 
 var is_moving = false
-
 var is_carrying = false
+var is_plugging_in = false
+
 @export var cable_scene = PackedScene
 
 var INPUTS = {
@@ -18,7 +19,10 @@ var INPUTS = {
 func _ready():
 	position = Globals.snap_to_center(position)
 
-	Events.player.connect(_handle_event)
+	Events.grab_plug.connect(_on_grab_plug)
+	Events.drop_plug.connect(_on_drop_plug)
+	Events.try_plug_in.connect(_on_try_plug_in)
+
 
 func _unhandled_input(event):
 	if is_moving:
@@ -26,7 +30,6 @@ func _unhandled_input(event):
 	for dir in INPUTS.keys():
 		if event.is_action_pressed(dir):
 			try_move(dir)
-			
 
 
 func try_move(dir):
@@ -37,7 +40,7 @@ func try_move(dir):
 	if !ray.is_colliding():
 		_move(dir)
 		if is_carrying:
-			_drop_cable(old_position)
+			_try_lay_cable(old_position)
 		
 		
 func _move(dir):
@@ -56,11 +59,25 @@ func _move(dir):
 	is_moving = false
 
 
-func _drop_cable(drop_position):
-	print("dropping cable...")
+func _try_lay_cable(drop_position):
+	if is_carrying:
+		_lay_cable(drop_position)
+		if is_plugging_in:
+			Events.plug_in.emit()
+			is_carrying = false
+
+
+func _lay_cable(drop_position):
 	Spawning.spawn.emit(cable_scene, drop_position)
 
 
-func _handle_event(type: EventTypes.PlayerEvent):
-	print("picked up cable!")
+func _on_grab_plug():
 	is_carrying = true
+
+
+func _on_drop_plug():
+	is_carrying = false
+
+
+func _on_try_plug_in():
+	is_plugging_in = true

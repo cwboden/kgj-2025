@@ -1,4 +1,16 @@
 extends StaticBody2D
 
+var is_connected := false
+
 func _ready() -> void:
-	position = Globals.snap_to_center(position)
+	Events.drop_plug.connect(_on_drop_plug)
+	Events.plug_in.connect(_on_plug_in)
+
+
+func _on_drop_plug():
+	if not is_connected:
+		self.queue_free()
+
+
+func _on_plug_in():
+	is_connected = true

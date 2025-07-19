@@ -5,9 +5,12 @@ extends Node2D
 var interactions := []
 
 func _input(event: InputEvent) -> void:
-	if interactions and event.is_action_pressed("ui_accept"):
-		label.hide()
-		await interactions[0].interact.call()
+	if event.is_action_pressed("ui_accept"):
+		if interactions:
+			label.hide()
+			await interactions[0].interact.call()
+		else:
+			Events.drop_plug.emit()
 
 func _process(_delta: float) -> void:
 	if interactions:

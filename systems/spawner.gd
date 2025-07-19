@@ -5,7 +5,6 @@ func _ready():
 
 
 func _on_spawn(scene: PackedScene, spawn_position: Vector2):
-	print("spawning...")
 	var entity = scene.instantiate()
 	add_child(entity)
 	entity.position = spawn_position
