@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dkafvga6wjndr"]
+[gd_scene load_steps=11 format=4 uid="uid://dkafvga6wjndr"]
 
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_8ko2f"]
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_kko32"]
 [ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="3_05h6q"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="3_7jv6q"]
 [ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="4_ou7rt"]
+[ext_resource type="PackedScene" uid="uid://c7nagjm2hqkaf" path="res://systems/spawner.tscn" id="6_ibkq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sor6q"]
 texture = ExtResource("1_kko32")
@@ -283,7 +284,6 @@ texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
-4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
 7:0/0 = 0
@@ -321,6 +321,7 @@ texture_region_size = Vector2i(64, 64)
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:3/0 = 0
 5:3/0 = 0
 6:3/0 = 0
@@ -382,6 +383,8 @@ texture_region_size = Vector2i(64, 64)
 10:7/0 = 0
 11:7/0 = 0
 12:7/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bwl5r"]
 scenes/2/scene = ExtResource("3_05h6q")
@@ -389,12 +392,16 @@ scenes/3/scene = ExtResource("4_ou7rt")
 
 [sub_resource type="TileSet" id="TileSet_ku0ah"]
 tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_rlwl7")
 sources/0 = SubResource("TileSetAtlasSource_sor6q")
 sources/2 = SubResource("TileSetScenesCollectionSource_bwl5r")
 
 [node name="Node2D" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-204.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(317, 1)
 
 [node name="Floor" type="TileMapLayer" parent="."]
 position = Vector2(317, 1)
@@ -402,19 +409,19 @@ tile_map_data = PackedByteArray("AAADAAAAAQALAAYAAAADAAEAAQALAAYAAAADAAIAAQALAAY
 tile_set = SubResource("TileSet_ku0ah")
 rendering_quadrant_size = 9
 
-[node name="Walls" type="TileMapLayer" parent="Floor"]
+[node name="Walls" type="TileMapLayer" parent="."]
+position = Vector2(317, 1)
 tile_map_data = PackedByteArray("AAABAAAAAQAEAAAAAAAAAAAAAQAEAAAAAAD//wAAAQAEAAAAAAACAAAAAQAEAAAAAAADAAAAAQAEAAAAAAAEAAAAAQAEAAAAAAAFAAAAAQAEAAAAAAAGAAAAAQAEAAAAAAAHAAAAAQAEAAAAAAAIAAAAAQAEAAAAAAAJAAAAAQAEAAAAAAAKAAAAAQAEAAAAAAALAAEAAQAEAAAAAAALAAAAAQAEAAAAAAAAAAcAAQAEAAAAAAABAAcAAQAEAAAAAAACAAcAAQAEAAAAAAADAAcAAQAEAAAAAAAEAAcAAQAEAAAAAAAFAAcAAQAEAAAAAAAGAAcAAQAEAAAAAAD+/wAAAQAEAAAAAAD9/wAAAQAEAAAAAAD8/wAAAQAEAAAAAAD7/wAAAQAEAAAAAAD7/wEAAQAEAAAAAAD7/wIAAQAEAAAAAAD7/wMAAQAEAAAAAAD7/wQAAQAEAAAAAAD7/wUAAQAEAAAAAAD7/wYAAQAEAAAAAAD7/wcAAQAEAAAAAAD8/wcAAQAEAAAAAAD9/wcAAQAEAAAAAAD+/wcAAQAEAAAAAAD//wcAAQAEAAAAAAALAAcAAQAEAAAAAAALAAYAAQAEAAAAAAALAAUAAQAEAAAAAAALAAQAAQAEAAAAAAALAAMAAQAEAAAAAAALAAIAAQAEAAAAAAD8/wQAAQAEAAAAAAD9/wQAAQAEAAAAAAD//wQAAQAEAAAAAAD+/wQAAQAEAAAAAAAAAAQAAQAEAAAAAAABAAQAAQAEAAAAAAACAAQAAQAEAAAAAAADAAQAAQAEAAAAAAACAAgAAQAEAAAAAAACAAwAAQAEAAAAAAACAAoAAQAEAAAAAAACAAkAAQAEAAAAAAD7/wgAAQAEAAAAAAD7/wkAAQAEAAAAAAD7/woAAQAEAAAAAAD7/wsAAQAEAAAAAAD7/wwAAQAEAAAAAAD7/w0AAQAEAAAAAAD8/w0AAQAEAAAAAAD9/w0AAQAEAAAAAAD+/w0AAQAEAAAAAAD//w0AAQAEAAAAAAAAAA0AAQAEAAAAAAABAA0AAQAEAAAAAAACAA0AAQAEAAAAAAADAA0AAQAEAAAAAAAEAA0AAQAEAAAAAAAFAA0AAQAEAAAAAAAGAA0AAQAEAAAAAAAHAA0AAQAEAAAAAAAIAA0AAQAEAAAAAAAJAA0AAQAEAAAAAAAKAA0AAQAEAAAAAAALAA0AAQAEAAAAAAALAAgAAQAEAAAAAAALAAkAAQAEAAAAAAALAAoAAQAEAAAAAAALAAsAAQAEAAAAAAALAAwAAQAEAAAAAAA=")
 tile_set = SubResource("TileSet_ku0ah")
 
 [node name="Overworld_Objects" type="TileMapLayer" parent="."]
 position = Vector2(317, 1)
-tile_map_data = PackedByteArray("AAD8/wgAAQAGAAUAAAD+/wgAAQAGAAUAAAAAAAgAAQAGAAUAAAAKAAwAAQAGAAQAAAAJAAwAAQAGAAQAAAAIAAwAAQAGAAQAAAD8/woAAQADAAMAAAD9/woAAQADAAMAAAD+/woAAQADAAMAAAD//woAAQADAAMAAAAAAAoAAQADAAMAAAABAAoAAQADAAMAAAACAAwAAgAAAAAAAgD7/wMAAgAAAAAAAgACAAkAAgAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAD8/wgAAQAGAAUAAAD+/wgAAQAGAAUAAAAAAAgAAQAGAAUAAAAKAAwAAQAGAAQAAAAJAAwAAQAGAAQAAAAIAAwAAQAGAAQAAAD8/woAAQADAAMAAAD9/woAAQADAAMAAAD+/woAAQADAAMAAAD//woAAQADAAMAAAAAAAoAAQADAAMAAAABAAoAAQADAAMAAAACAAwAAgAAAAAAAwACAAkAAgAAAAAAAwD7/wMAAgAAAAAAAwA=")
 tile_set = SubResource("TileSet_ku0ah")
 rendering_quadrant_size = 9
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(317, 1)
-
 [node name="Player" parent="." instance=ExtResource("3_7jv6q")]
-position = Vector2(149, 158)
+position = Vector2(149, 159)
 collision_mask = 4
+
+[node name="Spawner" parent="." instance=ExtResource("6_ibkq5")]
