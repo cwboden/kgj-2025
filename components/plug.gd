@@ -8,4 +8,5 @@ func _ready():
 	interactable.interact = _on_interact
 
 func _on_interact():
-	print("interacted: " + interactable.interaction_name)
+	Events.player.emit(EventTypes.PlayerEvent.GRAB_PLUG)
+	

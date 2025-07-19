@@ -5,7 +5,7 @@ var is_moving = false
 var is_carrying = false
 @export var cable_scene = PackedScene
 
-var inputs = {
+var INPUTS = {
 	"right": Vector2.RIGHT,
 	"left": Vector2.LEFT,
 	"up": Vector2.UP,
@@ -18,28 +18,30 @@ var inputs = {
 func _ready():
 	position = Globals.snap_to_center(position)
 
+	Events.player.connect(_handle_event)
 
 func _unhandled_input(event):
 	if is_moving:
 		return
-	for dir in inputs.keys():
+	for dir in INPUTS.keys():
 		if event.is_action_pressed(dir):
 			try_move(dir)
 			
 
 
 func try_move(dir):
-	var delta = inputs[dir] * Globals.TILE_SIZE
+	var delta = INPUTS[dir] * Globals.TILE_SIZE
 	var old_position = position
 	ray.target_position = delta
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		_move(dir)
-		_drop_cable(old_position)
+		if is_carrying:
+			_drop_cable(old_position)
 		
 		
 func _move(dir):
-	var delta = inputs[dir] * Globals.TILE_SIZE
+	var delta = INPUTS[dir] * Globals.TILE_SIZE
 	var tween = get_tree().create_tween()
 	tween.tween_property(
 			self, 
@@ -54,8 +56,11 @@ func _move(dir):
 	is_moving = false
 
 
-func _drop_cable(position):
-	pass
-	# var cable = cable_scene.new()
-	# cable.instantiate()
-	
+func _drop_cable(drop_position):
+	print("dropping cable...")
+	Spawning.spawn.emit(cable_scene, drop_position)
+
+
+func _handle_event(type: EventTypes.PlayerEvent):
+	print("picked up cable!")
+	is_carrying = true
