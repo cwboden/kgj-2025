@@ -9,7 +9,7 @@ size = Vector2(64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
 atlas = ExtResource("2_h4h36")
-region = Rect2(576, 320, 64, 64)
+region = Rect2(704, 64, 64, 320)
 
 [node name="plug" type="StaticBody2D"]
 script = ExtResource("1_5w8tk")
@@ -25,3 +25,4 @@ shape = SubResource("RectangleShape2D_h4h36")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_7mycd")
+vframes = 5

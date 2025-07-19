@@ -39,6 +39,10 @@ func _unhandled_input(event):
 func try_move(dir):
 	var delta = INPUTS[dir] * Globals.TILE_SIZE
 	var old_position = position
+	
+	# play animation, to show what walking into a wall would do
+	$AnimationPlayer.play(dir)
+	
 	ray.position = Vector2(0, 0)
 	ray.target_position = delta
 	ray.force_raycast_update()
@@ -62,7 +66,6 @@ func _move(dir):
 		).set_trans(Tween.TRANS_SINE)
 	
 	is_moving = true
-	$AnimationPlayer.play(dir)
 	await tween.finished
 	is_moving = false
 

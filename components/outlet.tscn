@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ftif"]
 atlas = ExtResource("1_c83qw")
-region = Rect2(703.722, 63.9133, 65.311, 64.0388)
+region = Rect2(576, 320, 64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l837j"]
 size = Vector2(64, 64)

@@ -20,12 +20,34 @@ signal on_connected()
 var has_connection = false
 var is_grabbed = false
 
+enum Setting {
+	ABILITY,
+	FRAME,
+}
+
+var SETTINGS = {
+	PlugType.JUMP: {
+		Setting.ABILITY: Events.Ability.JUMP,
+		Setting.FRAME: 1,
+	},
+	PlugType.DASH: {
+		Setting.ABILITY: Events.Ability.DASH,
+		Setting.FRAME: 2,
+	},
+	PlugType.SHOOT: {
+		Setting.ABILITY: Events.Ability.SHOOT,
+		Setting.FRAME: 3,
+	},
+}
+
 func _ready():
 	interactable.interact = _on_interact
 	on_connected.connect(_on_connected)
 	
 	Events.plug_in.connect(_on_plug_in)
 	Events.drop_plug.connect(_on_drop_plug)
+	
+	sprite.frame = SETTINGS[type][Setting.FRAME]
 
 
 func _on_interact():
@@ -47,10 +69,5 @@ func _on_drop_plug():
 	
 	
 func _on_connected():
-	match type:
-		PlugType.JUMP:
-			Events.set_ability.emit(Events.Ability.JUMP, true)
-		PlugType.DASH:
-			Events.set_ability.emit(Events.Ability.DASH, true)
-		PlugType.SHOOT:
-			Events.set_ability.emit(Events.Ability.SHOOT, true)
+	var ability = SETTINGS[type][Setting.ABILITY]
+	Events.set_ability.emit(ability, true)
