@@ -1,3 +1,4 @@
+class_name Player
 extends Area2D
 
 @export var cable_scene = PackedScene
@@ -10,11 +11,13 @@ var INPUTS = {
 	"down": Vector2.DOWN
 }
 
+@export var can_jump = false
+@export var can_dash = false
+@export var can_shoot = false
+
 var is_moving = false
 var is_carrying = false
 var is_plugging_in = false
-var can_jump = true
-
 
 func _ready():
 	position = Globals.snap_to_center(position)
@@ -22,6 +25,7 @@ func _ready():
 	Events.grab_plug.connect(_on_grab_plug)
 	Events.drop_plug.connect(_on_drop_plug)
 	Events.try_plug_in.connect(_on_try_plug_in)
+	Events.set_ability.connect(_on_set_ability)
 
 
 func _unhandled_input(event):
@@ -40,8 +44,7 @@ func try_move(dir):
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		_move(dir)
-		if is_carrying:
-			_try_lay_cable(old_position)
+		_try_lay_cable(old_position)
 	elif can_jump and not is_carrying:
 		ray.position = delta
 		ray.force_raycast_update()
@@ -97,8 +100,20 @@ func _on_grab_plug():
 
 
 func _on_drop_plug():
+	is_plugging_in = false
 	is_carrying = false
 
 
 func _on_try_plug_in():
-	is_plugging_in = true
+	if is_carrying:
+		is_plugging_in = true
+
+
+func _on_set_ability(type: Events.Ability, is_active: bool):
+	match type:
+		Events.Ability.JUMP:
+			can_jump = is_active
+		Events.Ability.DASH:
+			can_dash = is_active
+		Events.Ability.SHOOT:
+			can_shoot = is_active

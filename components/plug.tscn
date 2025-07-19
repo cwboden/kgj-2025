@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://6i7n5xk3thg7"]
+[gd_scene load_steps=7 format=3 uid="uid://6i7n5xk3thg7"]
 
 [ext_resource type="Script" uid="uid://b5m00dtgdl1cm" path="res://components/plug.gd" id="1_5w8tk"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_h4h36"]
 [ext_resource type="PackedScene" uid="uid://dat2a6iuftxyj" path="res://systems/interactable.tscn" id="3_h4h36"]
+[ext_resource type="Script" uid="uid://b2mccvj7lar5x" path="res://systems/connectable.gd" id="4_qcj4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4h36"]
 size = Vector2(64, 64)
@@ -25,3 +26,6 @@ shape = SubResource("RectangleShape2D_h4h36")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_7mycd")
+
+[node name="Connectable" type="Node" parent="."]
+script = ExtResource("4_qcj4c")

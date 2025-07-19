@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx3qdrxffivea"]
+[gd_scene load_steps=8 format=3 uid="uid://cx3qdrxffivea"]
 
 [ext_resource type="Script" uid="uid://j6sye4f7qcbl" path="res://components/outlet.gd" id="1_0ftif"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_c83qw"]
 [ext_resource type="PackedScene" uid="uid://dat2a6iuftxyj" path="res://systems/interactable.tscn" id="3_l837j"]
+[ext_resource type="Script" uid="uid://b2mccvj7lar5x" path="res://systems/connectable.gd" id="4_et1hj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ftif"]
 atlas = ExtResource("1_c83qw")
@@ -28,3 +29,6 @@ interaction_name = "plug in!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
 shape = SubResource("RectangleShape2D_et1hj")
+
+[node name="Connectable" type="Node" parent="."]
+script = ExtResource("4_et1hj")
