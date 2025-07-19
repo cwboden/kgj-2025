@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dia444kqistjd"]
+
+[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_v5psv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i7lm"]
+atlas = ExtResource("1_v5psv")
+region = Rect2(256, 0, 64, 64)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_5i7lm")
