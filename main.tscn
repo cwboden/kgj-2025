@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://nnjkpa1rm758"]
+[gd_scene load_steps=7 format=4 uid="uid://nnjkpa1rm758"]
 
 [ext_resource type="Script" uid="uid://bps2npa2uduxr" path="res://Main.gd" id="1_1j54n"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="2_ia34y"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="3_nuk7a"]
+[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="4_1bvp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7s07"]
 texture = ExtResource("3_nuk7a")
@@ -112,4 +113,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAA
 tile_set = SubResource("TileSet_8q7wt")
 
 [node name="Player" parent="." instance=ExtResource("2_ia34y")]
-position = Vector2(459, 323)
+position = Vector2(421, 332)
+
+[node name="plug" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(349, 331)

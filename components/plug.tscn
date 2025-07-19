@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://6i7n5xk3thg7"]
+
+[ext_resource type="Script" uid="uid://b5m00dtgdl1cm" path="res://components/plug.gd" id="1_5w8tk"]
+[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_h4h36"]
+[ext_resource type="PackedScene" uid="uid://dat2a6iuftxyj" path="res://systems/interactable.tscn" id="3_h4h36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4h36"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("2_h4h36")
+region = Rect2(576, 320, 64, 64)
+
+[node name="plug" type="StaticBody2D"]
+script = ExtResource("1_5w8tk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h4h36")
+
+[node name="Interaction" parent="." instance=ExtResource("3_h4h36")]
+interaction_name = "pick up plug"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+shape = SubResource("RectangleShape2D_h4h36")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_7mycd")
