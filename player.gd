@@ -54,8 +54,7 @@ func _move(dir):
 	is_moving = false
 
 
-func _drop_cable(position):
-	pass
+func _drop_cable(drop_position):
 	# var cable = cable_scene.new()
-	# cable.instantiate()
+	pass
 	
