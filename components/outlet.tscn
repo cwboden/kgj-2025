@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://cx3qdrxffivea"]
 
-[ext_resource type="Script" uid="uid://j6sye4f7qcbl" path="res://components/outlet.gd" id="1_0ftif"]
+[ext_resource type="Script" path="res://components/outlet.gd" id="1_0ftif"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_c83qw"]
 [ext_resource type="PackedScene" uid="uid://dat2a6iuftxyj" path="res://systems/interactable.tscn" id="3_l837j"]
 [ext_resource type="Script" uid="uid://b2mccvj7lar5x" path="res://systems/connectable.gd" id="4_et1hj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ftif"]
 atlas = ExtResource("1_c83qw")
-region = Rect2(704, 192, 64, 64)
+region = Rect2(703.722, 63.9133, 65.311, 64.0388)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l837j"]
 size = Vector2(64, 64)
