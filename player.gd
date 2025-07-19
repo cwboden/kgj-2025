@@ -43,6 +43,7 @@ func try_move(dir):
 	# play animation, to show what walking into a wall would do
 	$AnimationPlayer.play(dir)
 	
+	# reset RayCast
 	ray.position = Vector2(0, 0)
 	ray.target_position = delta
 	ray.force_raycast_update()
@@ -54,6 +55,12 @@ func try_move(dir):
 		ray.force_raycast_update()
 		if !ray.is_colliding():
 			_jump(dir)
+	elif can_dash:
+		var collision = ray.get_collider()
+		if collision is Dashable:
+			_dash(dir)
+			_try_lay_cable(old_position)
+			_try_lay_cable(old_position + delta)
 		
 func _move(dir):
 	var delta = INPUTS[dir] * Globals.TILE_SIZE
@@ -85,6 +92,24 @@ func _jump(dir):
 	await tween.finished
 	is_moving = false
 
+
+func _dash(dir):
+	var delta = INPUTS[dir] * Globals.TILE_SIZE * 2
+	var tween = get_tree().create_tween()
+	tween.tween_property(
+			self, 
+			"position", 
+			position + delta, 
+			1.0/Globals.ANIMATION_SPEED
+		).set_trans(Tween.TRANS_SINE)
+	
+	is_moving = true
+	$AnimationPlayer.speed_scale = 2.0
+	$AnimationPlayer.play(dir)
+	await tween.finished
+	$AnimationPlayer.speed_scale = 1.0
+	is_moving = false
+	
 
 func _try_lay_cable(drop_position):
 	if is_carrying:

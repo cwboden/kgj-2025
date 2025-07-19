@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nnjkpa1rm758"]
+[gd_scene load_steps=8 format=3 uid="uid://nnjkpa1rm758"]
 
 [ext_resource type="Script" uid="uid://bps2npa2uduxr" path="res://Main.gd" id="1_1j54n"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="2_ia34y"]
@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://c7nagjm2hqkaf" path="res://systems/spawner.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="7_272bh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1j54n")
 
 [node name="plug" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(480, 160)
-type = 2
+type = 1
 
 [node name="Spawner" parent="." instance=ExtResource("4_lquwl")]
 
@@ -20,9 +21,12 @@ type = 2
 position = Vector2(672, 160)
 
 [node name="door" parent="." node_paths=PackedStringArray("plug") instance=ExtResource("6_7mycd")]
-position = Vector2(608, 288)
+position = Vector2(288, 288)
 plug = NodePath("../plug")
-is_open = true
+
+[node name="Hole" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(288, 160)
 
 [node name="Player" parent="." instance=ExtResource("2_ia34y")]
-position = Vector2(480, 288)
+position = Vector2(672, 288)
+can_dash = true

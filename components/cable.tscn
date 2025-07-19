@@ -10,7 +10,7 @@ size = Vector2(64, 64)
 atlas = ExtResource("1_l8stc")
 region = Rect2(768.21, 63.2038, 63.4394, 65.5424)
 
-[node name="cable" type="StaticBody2D"]
+[node name="Cable" type="StaticBody2D"]
 script = ExtResource("1_ktp8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

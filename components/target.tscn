@@ -9,7 +9,7 @@ region = Rect2(704, 64, 64, 320)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oj31"]
 size = Vector2(64, 64)
 
-[node name="target" type="StaticBody2D"]
+[node name="Target" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_btegy")
