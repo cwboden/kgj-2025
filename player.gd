@@ -1,10 +1,7 @@
 extends Area2D
 
-var is_moving = false
-var is_carrying = false
-var is_plugging_in = false
-
 @export var cable_scene = PackedScene
+@onready var ray = $RayCast_move
 
 var INPUTS = {
 	"right": Vector2.RIGHT,
@@ -13,7 +10,10 @@ var INPUTS = {
 	"down": Vector2.DOWN
 }
 
-@onready var ray = $RayCast2d
+var is_moving = false
+var is_carrying = false
+var is_plugging_in = false
+var can_jump = true
 
 
 func _ready():
@@ -35,16 +35,37 @@ func _unhandled_input(event):
 func try_move(dir):
 	var delta = INPUTS[dir] * Globals.TILE_SIZE
 	var old_position = position
+	ray.position = Vector2(0, 0)
 	ray.target_position = delta
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		_move(dir)
 		if is_carrying:
 			_try_lay_cable(old_position)
-		
+	elif can_jump and not is_carrying:
+		ray.position = delta
+		ray.force_raycast_update()
+		if !ray.is_colliding():
+			_jump(dir)
 		
 func _move(dir):
 	var delta = INPUTS[dir] * Globals.TILE_SIZE
+	var tween = get_tree().create_tween()
+	tween.tween_property(
+			self, 
+			"position", 
+			position + delta, 
+			0.5/Globals.ANIMATION_SPEED
+		).set_trans(Tween.TRANS_SINE)
+	
+	is_moving = true
+	$AnimationPlayer.play(dir)
+	await tween.finished
+	is_moving = false
+
+
+func _jump(dir):
+	var delta = INPUTS[dir] * Globals.TILE_SIZE * 2
 	var tween = get_tree().create_tween()
 	tween.tween_property(
 			self, 
@@ -54,7 +75,7 @@ func _move(dir):
 		).set_trans(Tween.TRANS_SINE)
 	
 	is_moving = true
-	$AnimationPlayer.play(dir)
+	$AnimationPlayer.play("jump")
 	await tween.finished
 	is_moving = false
 

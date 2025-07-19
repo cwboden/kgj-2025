@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0wysm6c2nqgj"]
+[gd_scene load_steps=15 format=3 uid="uid://b0wysm6c2nqgj"]
 
 [ext_resource type="Script" uid="uid://bff4evm16ro7l" path="res://player.gd" id="1_26y8w"]
 [ext_resource type="Texture2D" uid="uid://fn3ats00hpd7" path="res://assets/sokoban_character.png" id="2_47llq"]
@@ -72,9 +72,42 @@ tracks/0/keys = {
 "values": [9, 10, 9, 11, 9]
 }
 
+[sub_resource type="Animation" id="Animation_hqtel"]
+resource_name = "jump"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2d:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 17, 10, 14, 1]
+}
+
+[sub_resource type="Animation" id="Animation_sweqy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2d:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3qh4"]
 _data = {
+&"RESET": SubResource("Animation_sweqy"),
 &"down": SubResource("Animation_c7mrc"),
+&"jump": SubResource("Animation_hqtel"),
 &"left": SubResource("Animation_88f3v"),
 &"right": SubResource("Animation_7vjps"),
 &"up": SubResource("Animation_1mx5g")
@@ -94,15 +127,16 @@ cable_scene = ExtResource("2_hqtel")
 texture = ExtResource("2_47llq")
 hframes = 6
 vframes = 4
+frame = 6
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tia2a")
 
-[node name="RayCast2d" type="RayCast2D" parent="."]
+[node name="RayCast_move" type="RayCast2D" parent="."]
 collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../RayCast2d")
+root_node = NodePath("../RayCast_move")
 libraries = {
 &"": SubResource("AnimationLibrary_e3qh4")
 }
