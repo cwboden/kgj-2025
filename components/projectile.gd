@@ -12,3 +12,4 @@ func _process(delta: float) -> void:
 func _on_area_entered(target: Target) -> void:
 	target.on_hit.emit()
 	queue_free()
+	target.queue_free()
