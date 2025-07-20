@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*res://systems/events.gd"
-Spawning="*res://systems/spawning.gd"
 
 [display]
 

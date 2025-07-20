@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7nbs245dmbr3"]
+
+[ext_resource type="Script" uid="uid://bkrf2sfnd7pp8" path="res://components/projectile.gd" id="1_oc5yy"]
+[ext_resource type="Texture2D" uid="uid://dgeofltqtrmn4" path="res://assets/icons/Tilesheet/iconsDefault.png" id="1_wgijb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oc5yy"]
+radius = 16.0
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_oc5yy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wgijb")
+region_enabled = true
+region_rect = Rect2(162, 800, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oc5yy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

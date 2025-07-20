@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dia444kqistjd"]
 
-[ext_resource type="Script" path="res://components/door.gd" id="1_58skw"]
+[ext_resource type="Script" uid="uid://c345nvhtfbwa4" path="res://components/door.gd" id="1_58skw"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_v5psv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5i7lm"]
