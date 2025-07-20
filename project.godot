@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="grid_movement"
-run/main_scene="res://levels/The Icy Labrynth.tscn"
-config/features=PackedStringArray("4.4")
+run/main_scene="res://menus/main.tscn"
+config/features=PackedStringArray("4.3")
 config/icon="res://icon.svg"
 
 [autoload]

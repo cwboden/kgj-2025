@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://6i7n5xk3thg7"]
 
-[ext_resource type="Script" uid="uid://b5m00dtgdl1cm" path="res://components/plug.gd" id="1_5w8tk"]
+[ext_resource type="Script" path="res://components/plug.gd" id="1_5w8tk"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_h4h36"]
 [ext_resource type="PackedScene" uid="uid://dat2a6iuftxyj" path="res://systems/interactable.tscn" id="3_h4h36"]
 [ext_resource type="Texture2D" uid="uid://d2nghp2tdbav1" path="res://assets/plugs.png" id="4_qcj4c"]
