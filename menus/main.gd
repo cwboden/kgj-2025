@@ -12,7 +12,7 @@ func _on_play_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	OS.shell_open("https://github.com/cwboden/kgj-2025/blob/main/ATTRIBUTIONS.md")
+	OS.shell_open("https://github.com/cwboden/kgj-2025/blob/main/ATTRIBUTION.md")
 
 
 func _on_exit_pressed() -> void:
