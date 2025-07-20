@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://j3fhy4qx8t7m"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://j3fhy4qx8t7m"]
 
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_v58qe"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_ad47k"]
 [ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_dcfh7"]
 [ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="4_7ggp4"]
 [ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="5_tryta"]
+[ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="6_0iich"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um4do"]
 texture = ExtResource("1_v58qe")
@@ -390,6 +391,7 @@ texture_region_size = Vector2i(64, 64)
 scenes/1/scene = ExtResource("3_dcfh7")
 scenes/2/scene = ExtResource("4_7ggp4")
 scenes/3/scene = ExtResource("5_tryta")
+scenes/4/scene = ExtResource("6_0iich")
 
 [resource]
 tile_size = Vector2i(64, 64)

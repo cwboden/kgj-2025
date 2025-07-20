@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="grid_movement"
-run/main_scene="uid://b336shrmqmqt6"
+run/main_scene="res://levels/The Icy Labrynth.tscn"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.svg"
 
