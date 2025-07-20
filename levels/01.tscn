@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://dkafvga6wjndr"]
+[gd_scene load_steps=5 format=4 uid="uid://cgrjbi2pejlo0"]
 
 [ext_resource type="TileSet" uid="uid://j3fhy4qx8t7m" path="res://resources/tile-set.tres" id="1_4mdka"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="3_7jv6q"]
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="7_ffdc4"]
 [ext_resource type="PackedScene" uid="uid://spcxpuah152r" path="res://levels/02.tscn" id="8_yi5ae"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-204.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
