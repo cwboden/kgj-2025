@@ -1,16 +1,10 @@
-extends StaticBody2D
-
-@onready var interactable = $Interaction
-
-# TODO: update Sprite during state changes
-@onready var sprite = $Sprite2D
+class_name Outlet
+extends Node
 
 var plugging_in = false
 var has_connection = false
 
 func _ready():
-	interactable.interact = _on_interact
-	
 	Events.drop_plug.connect(_on_drop_plug)
 	Events.plug_in.connect(_on_plug_in)
 

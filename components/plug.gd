@@ -1,10 +1,5 @@
 class_name Plug
-extends StaticBody2D
-
-@onready var interactable = $Interaction
-
-# TODO: update Sprite during state changes
-@onready var sprite = $Sprite2D
+extends Node
 
 enum PlugType {
 	JUMP,
@@ -44,13 +39,10 @@ var SETTINGS = {
 }
 
 func _ready():
-	interactable.interact = _on_interact
 	on_connected.connect(_on_connected)
 	
 	Events.plug_in.connect(_on_plug_in)
 	Events.drop_plug.connect(_on_drop_plug)
-	
-	sprite.frame = SETTINGS[type][Setting.FRAME]
 
 
 func _on_interact():

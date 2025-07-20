@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0wysm6c2nqgj"]
+[gd_scene load_steps=11 format=3 uid="uid://b0wysm6c2nqgj"]
 
 [ext_resource type="Script" uid="uid://bff4evm16ro7l" path="res://player.gd" id="1_26y8w"]
 [ext_resource type="Texture2D" uid="uid://fn3ats00hpd7" path="res://assets/sokoban_character.png" id="2_47llq"]
-[ext_resource type="Script" uid="uid://bbf63mexhoslk" path="res://systems/interacting.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tia2a"]
 size = Vector2(32, 32)
@@ -112,12 +111,6 @@ _data = {
 &"up": SubResource("Animation_1mx5g")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(60, 96)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
-size = Vector2(96, 60)
-
 [node name="Player" type="Area2D"]
 script = ExtResource("1_26y8w")
 
@@ -139,18 +132,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_e3qh4")
 }
 
-[node name="Interacting" type="Node2D" parent="."]
-script = ExtResource("3_i3pqv")
-
-[node name="Range" type="Area2D" parent="Interacting"]
-
-[node name="collision-NS" type="CollisionShape2D" parent="Interacting/Range"]
-shape = SubResource("RectangleShape2D_onrkg")
-
-[node name="collision-EW" type="CollisionShape2D" parent="Interacting/Range"]
-shape = SubResource("RectangleShape2D_i3pqv")
-
-[node name="InteractionLabel" type="Label" parent="Interacting"]
+[node name="InteractionLabel" type="Label" parent="."]
 offset_left = -71.0
 offset_top = -51.0
 offset_right = 56.0
@@ -158,6 +140,3 @@ offset_bottom = -28.0
 size_flags_horizontal = 4
 text = "interaction label"
 horizontal_alignment = 2
-
-[connection signal="area_entered" from="Interacting/Range" to="Interacting" method="_on_range_area_entered"]
-[connection signal="area_exited" from="Interacting/Range" to="Interacting" method="_on_range_area_exited"]
