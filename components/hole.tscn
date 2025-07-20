@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmhxiehrwwaod"]
 
-[ext_resource type="Script" uid="uid://tobc7h785lau" path="res://systems/dashable.gd" id="1_b4uoj"]
+[ext_resource type="Script" path="res://systems/dashable.gd" id="1_b4uoj"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_lb8s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4uoj"]

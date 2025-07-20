@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cnmj7qo2bflxv"]
+[gd_scene load_steps=15 format=4 uid="uid://cnmj7qo2bflxv"]
 
 [ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://Prototype Levels/protype_level_4.gd" id="1_4aw2o"]
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_ilvr4"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="6_wugc0"]
 [ext_resource type="PackedScene" uid="uid://co2w6jtma5xu7" path="res://components/target.tscn" id="8_f6csg"]
 [ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="8_usll4"]
+[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="9_00bdm"]
+[ext_resource type="PackedScene" uid="uid://dkafvga6wjndr" path="res://Prototype Levels/Protype Level 1.tscn" id="10_nfvmm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmc16"]
 texture = ExtResource("1_ilvr4")
@@ -517,3 +519,15 @@ position = Vector2(480, 544)
 
 [node name="Target7" parent="targets" instance=ExtResource("8_f6csg")]
 position = Vector2(608, 544)
+
+[node name="Warp" parent="." instance=ExtResource("9_00bdm")]
+position = Vector2(288, 864)
+next_level = ExtResource("10_nfvmm")
+
+[node name="Warp2" parent="." instance=ExtResource("9_00bdm")]
+position = Vector2(224, 864)
+next_level = ExtResource("10_nfvmm")
+
+[node name="Warp3" parent="." instance=ExtResource("9_00bdm")]
+position = Vector2(160, 864)
+next_level = ExtResource("10_nfvmm")
