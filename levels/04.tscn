@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://cnmj7qo2bflxv"]
+[gd_scene load_steps=16 format=4 uid="uid://cnmj7qo2bflxv"]
 
-[ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://Prototype Levels/protype_level_4.gd" id="1_4aw2o"]
+[ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://levels/04.gd" id="1_4aw2o"]
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_ilvr4"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_6wspl"]
 [ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_mv2px"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://co2w6jtma5xu7" path="res://components/target.tscn" id="8_f6csg"]
 [ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="8_usll4"]
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="9_00bdm"]
-[ext_resource type="PackedScene" uid="uid://dkafvga6wjndr" path="res://Prototype Levels/Protype Level 1.tscn" id="10_nfvmm"]
+[ext_resource type="PackedScene" uid="uid://ch4stae6ielko" path="res://levels/05.tscn" id="10_nfvmm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmc16"]
 texture = ExtResource("1_ilvr4")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bff4evm16ro7l" path="res://player.gd" id="1_26y8w"]
 [ext_resource type="Texture2D" uid="uid://fn3ats00hpd7" path="res://assets/sokoban_character.png" id="2_47llq"]
-[ext_resource type="Script" path="res://systems/interacting.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://bbf63mexhoslk" path="res://systems/interacting.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tia2a"]
 size = Vector2(32, 32)

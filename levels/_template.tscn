@@ -1,17 +1,16 @@
-[gd_scene load_steps=14 format=4 uid="uid://dv0eddy5rntil"]
+[gd_scene load_steps=13 format=4 uid="uid://dv0eddy5rntil"]
 
-[ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_xstux"]
-[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_oy6hn"]
-[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_64x0n"]
-[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="4_3l44t"]
-[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="5_c0d74"]
-[ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="6_2qim3"]
-[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="7_n4y8o"]
-[ext_resource type="TileSet" path="res://assets/tile-sets/sokoban.tres" id="7_oy6hn"]
-[ext_resource type="Script" uid="uid://b4wavhsfo6xno" path="res://components/warp.gd" id="8_64x0n"]
+[ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_1oaa2"]
+[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_hqfqf"]
+[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_wt7up"]
+[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="4_qw6x8"]
+[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="5_8j2ia"]
+[ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="6_jbtym"]
+[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="7_up4ed"]
+[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="8_k0nym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmc16"]
-texture = ExtResource("1_xstux")
+texture = ExtResource("1_1oaa2")
 margins = Vector2i(16, 30)
 texture_region_size = Vector2i(67, 64)
 0:0/0 = 0
@@ -282,7 +281,7 @@ texture_region_size = Vector2i(67, 64)
 6:31/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n8w1"]
-texture = ExtResource("2_oy6hn")
+texture = ExtResource("2_hqfqf")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 2:0/0 = 0
@@ -391,10 +390,10 @@ texture_region_size = Vector2i(64, 64)
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xs82t"]
-scenes/1/scene = ExtResource("3_64x0n")
-scenes/2/scene = ExtResource("4_3l44t")
-scenes/3/scene = ExtResource("5_c0d74")
-scenes/4/scene = ExtResource("6_2qim3")
+scenes/1/scene = ExtResource("3_wt7up")
+scenes/2/scene = ExtResource("4_qw6x8")
+scenes/3/scene = ExtResource("5_8j2ia")
+scenes/4/scene = ExtResource("6_jbtym")
 
 [sub_resource type="TileSet" id="TileSet_ji0am"]
 tile_size = Vector2i(64, 64)
@@ -417,15 +416,62 @@ rendering_quadrant_size = 9
 tile_map_data = PackedByteArray("AAABAAAAAQADAAAAAAAAAAAAAQADAAAAAAD//wAAAQADAAAAAAACAAAAAQADAAAAAAADAAAAAQADAAAAAAAEAAAAAQADAAAAAAAFAAAAAQADAAAAAAAGAAAAAQADAAAAAAAHAAAAAQADAAAAAAAIAAAAAQADAAAAAAAJAAAAAQADAAAAAAAKAAAAAQADAAAAAAALAAAAAQADAAAAAAD+/wAAAQADAAAAAAD9/wAAAQADAAAAAAD8/wAAAQADAAAAAAD7/wAAAQADAAAAAAD6/wAAAQADAAAAAAD6/wEAAQADAAAAAAD6/wIAAQADAAAAAAD6/wMAAQADAAAAAAD6/wQAAQADAAAAAAD6/wUAAQADAAAAAAD6/wYAAQADAAAAAAD6/wcAAQADAAAAAAD6/wgAAQADAAAAAAD6/wkAAQADAAAAAAD6/woAAQADAAAAAAD6/wsAAQADAAAAAAD6/wwAAQADAAAAAAD6/w0AAQADAAAAAAD6/w4AAQADAAAAAAD7/w4AAQADAAAAAAD8/w4AAQADAAAAAAD9/w4AAQADAAAAAAD+/w4AAQADAAAAAAD//w4AAQADAAAAAAAAAA4AAQADAAAAAAABAA4AAQADAAAAAAACAA4AAQADAAAAAAADAA4AAQADAAAAAAAEAA4AAQADAAAAAAAFAA4AAQADAAAAAAAGAA4AAQADAAAAAAAHAA4AAQADAAAAAAAIAA4AAQADAAAAAAAJAA4AAQADAAAAAAAKAA4AAQADAAAAAAALAA4AAQADAAAAAAAMAA4AAQADAAAAAAAMAA0AAQADAAAAAAAMAAwAAQADAAAAAAAMAAsAAQADAAAAAAAMAAoAAQADAAAAAAAMAAkAAQADAAAAAAAMAAgAAQADAAAAAAAMAAcAAQADAAAAAAAMAAYAAQADAAAAAAAMAAUAAQADAAAAAAAMAAQAAQADAAAAAAAMAAMAAQADAAAAAAAMAAIAAQADAAAAAAAMAAEAAQADAAAAAAAMAAAAAQADAAAAAAD7/w0AAQADAAAAAAD7/wwAAQADAAAAAAD7/wsAAQADAAAAAAD7/woAAQADAAAAAAD7/wkAAQADAAAAAAD7/wgAAQADAAAAAAD7/wcAAQADAAAAAAD7/wYAAQADAAAAAAD7/wUAAQADAAAAAAD7/wQAAQADAAAAAAD7/wMAAQADAAAAAAD7/wIAAQADAAAAAAD7/wEAAQADAAAAAAD8/wEAAQADAAAAAAD9/wEAAQADAAAAAAD//wEAAQADAAAAAAD+/wEAAQADAAAAAAAAAAEAAQADAAAAAAABAAEAAQADAAAAAAACAAEAAQADAAAAAAADAAEAAQADAAAAAAAEAAEAAQADAAAAAAAFAAEAAQADAAAAAAAGAAEAAQADAAAAAAAHAAEAAQADAAAAAAAIAAEAAQADAAAAAAAJAAEAAQADAAAAAAAKAAEAAQADAAAAAAALAAEAAQADAAAAAAALAAIAAQADAAAAAAALAAMAAQADAAAAAAALAAQAAQADAAAAAAALAAUAAQADAAAAAAALAAYAAQADAAAAAAALAAcAAQADAAAAAAALAAgAAQADAAAAAAALAAkAAQADAAAAAAALAAoAAQADAAAAAAALAAsAAQADAAAAAAALAAwAAQADAAAAAAALAA0AAQADAAAAAAAKAA0AAQADAAAAAAAJAA0AAQADAAAAAAAIAA0AAQADAAAAAAAHAA0AAQADAAAAAAAGAA0AAQADAAAAAAAFAA0AAQADAAAAAAAEAA0AAQADAAAAAAADAA0AAQADAAAAAAACAA0AAQADAAAAAAABAA0AAQADAAAAAAAAAA0AAQADAAAAAAD//w0AAQADAAAAAAD+/w0AAQADAAAAAAD9/w0AAQADAAAAAAD8/w0AAQADAAAAAAD8/wMAAQADAAAAAAD8/wQAAQADAAAAAAD8/wUAAQADAAAAAAD8/wcAAQADAAAAAAD8/wgAAQADAAAAAAD8/wkAAQADAAAAAAAKAAIAAQADAAAAAAAKAAMAAQADAAAAAAAKAAQAAQADAAAAAAAKAAYAAQADAAAAAAAKAAcAAQADAAAAAAAKAAgAAQADAAAAAAAAAAMAAQADAAAAAAAAAAQAAQADAAAAAAAAAAUAAQADAAAAAAABAAMAAQADAAAAAAABAAQAAQADAAAAAAABAAUAAQADAAAAAAAAAAcAAQADAAAAAAAAAAgAAQADAAAAAAAAAAkAAQADAAAAAAABAAcAAQADAAAAAAABAAgAAQADAAAAAAABAAkAAQADAAAAAAAFAAYAAQADAAAAAAAFAAcAAQADAAAAAAAFAAgAAQADAAAAAAAGAAYAAQADAAAAAAAGAAcAAQADAAAAAAAGAAgAAQADAAAAAAAFAAIAAQADAAAAAAAFAAMAAQADAAAAAAAFAAQAAQADAAAAAAAGAAIAAQADAAAAAAAGAAMAAQADAAAAAAAGAAQAAQADAAAAAAA=")
 tile_set = SubResource("TileSet_ji0am")
 
-[node name="Warps" type="TileMapLayer" parent="TileMap"]
-tile_map_data = PackedByteArray("AAAKAAwAAQAAAAMAAAA=")
-tile_set = ExtResource("7_oy6hn")
-script = ExtResource("8_64x0n")
+[node name="Outlets" type="Node" parent="TileMap"]
+
+[node name="Outlet1" parent="TileMap/Outlets" instance=ExtResource("3_wt7up")]
+position = Vector2(352, 224)
+
+[node name="Outlet2" parent="TileMap/Outlets" instance=ExtResource("3_wt7up")]
+position = Vector2(352, 480)
+
+[node name="Outlet3" parent="TileMap/Outlets" instance=ExtResource("3_wt7up")]
+position = Vector2(736, 160)
+
+[node name="Outlet4" parent="TileMap/Outlets" instance=ExtResource("3_wt7up")]
+position = Vector2(736, 416)
 
 [node name="Plugs" type="Node" parent="TileMap"]
 
+[node name="Jump" parent="TileMap/Plugs" instance=ExtResource("5_8j2ia")]
+position = Vector2(96, 224)
+
+[node name="Dash" parent="TileMap/Plugs" instance=ExtResource("5_8j2ia")]
+position = Vector2(992, 160)
+type = 1
+
+[node name="Shoot" parent="TileMap/Plugs" instance=ExtResource("5_8j2ia")]
+position = Vector2(96, 480)
+type = 2
+
+[node name="Custom" parent="TileMap/Plugs" instance=ExtResource("5_8j2ia")]
+position = Vector2(992, 416)
+type = 3
+
 [node name="Doors" type="Node" parent="TileMap"]
 
-[node name="Player" parent="." instance=ExtResource("7_n4y8o")]
+[node name="Door1" parent="TileMap/Doors" node_paths=PackedStringArray("plug") instance=ExtResource("6_jbtym")]
+position = Vector2(992, 672)
+plug = NodePath("../../Plugs/Custom")
+
+[node name="Door2" parent="TileMap/Doors" node_paths=PackedStringArray("plug") instance=ExtResource("6_jbtym")]
+position = Vector2(928, 736)
+plug = NodePath("../../Plugs/Custom")
+
+[node name="Door3" parent="TileMap/Doors" node_paths=PackedStringArray("plug") instance=ExtResource("6_jbtym")]
+position = Vector2(992, 608)
+plug = NodePath("../../Plugs/Custom")
+
+[node name="Door4" parent="TileMap/Doors" node_paths=PackedStringArray("plug") instance=ExtResource("6_jbtym")]
+position = Vector2(928, 672)
+plug = NodePath("../../Plugs/Custom")
+
+[node name="Door5" parent="TileMap/Doors" node_paths=PackedStringArray("plug") instance=ExtResource("6_jbtym")]
+position = Vector2(864, 736)
+plug = NodePath("../../Plugs/Custom")
+
+[node name="Warp" parent="TileMap" instance=ExtResource("7_up4ed")]
+position = Vector2(672, 800)
+
+[node name="Player" parent="." instance=ExtResource("8_k0nym")]
 position = Vector2(216, 228)
 collision_mask = 4

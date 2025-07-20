@@ -72,5 +72,6 @@ func _on_drop_plug():
 	
 	
 func _on_connected():
-	var ability = SETTINGS[type][Setting.ABILITY]
-	Events.set_ability.emit(ability, true)
+	if Setting.ABILITY in SETTINGS[type]:
+		var ability = SETTINGS[type][Setting.ABILITY]
+		Events.set_ability.emit(ability, true)

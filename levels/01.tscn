@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="3_7jv6q"]
 [ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="4_ou7rt"]
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="7_ffdc4"]
-[ext_resource type="PackedScene" uid="uid://spcxpuah152r" path="res://Prototype Levels/Protype Level 2.tscn" id="8_yi5ae"]
+[ext_resource type="PackedScene" uid="uid://spcxpuah152r" path="res://levels/02.tscn" id="8_yi5ae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um4do"]
 texture = ExtResource("1_kko32")

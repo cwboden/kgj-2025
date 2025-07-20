@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="6_kkonr"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="7_u7uuf"]
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="8_kiwo5"]
-[ext_resource type="PackedScene" uid="uid://blafojmj76b08" path="res://Prototype Levels/Protype Level 3.tscn" id="9_bovdo"]
+[ext_resource type="PackedScene" uid="uid://blafojmj76b08" path="res://levels/03.tscn" id="9_bovdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmc16"]
 texture = ExtResource("2_syfrt")
