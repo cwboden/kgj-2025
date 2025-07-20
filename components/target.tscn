@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://co2w6jtma5xu7"]
 
-[ext_resource type="Script" uid="uid://caxrfdkl2npc8" path="res://components/target.gd" id="1_btegy"]
+[ext_resource type="Script" path="res://components/target.gd" id="1_btegy"]
 [ext_resource type="Texture2D" uid="uid://dgeofltqtrmn4" path="res://assets/icons/Tilesheet/iconsDefault.png" id="1_v1x26"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btegy"]
