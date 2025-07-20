@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dkafvga6wjndr"]
+[gd_scene load_steps=13 format=4 uid="uid://dkafvga6wjndr"]
 
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_8ko2f"]
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_kko32"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="3_05h6q"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="3_7jv6q"]
 [ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="4_ou7rt"]
-[ext_resource type="PackedScene" uid="uid://c7nagjm2hqkaf" path="res://systems/spawner.tscn" id="6_ibkq5"]
+[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="7_ffdc4"]
+[ext_resource type="PackedScene" uid="uid://spcxpuah152r" path="res://Prototype Levels/Protype Level 2.tscn" id="8_yi5ae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um4do"]
 texture = ExtResource("1_kko32")
@@ -400,7 +401,7 @@ sources/1 = SubResource("TileSetAtlasSource_ftd6n")
 sources/0 = SubResource("TileSetAtlasSource_um4do")
 sources/2 = SubResource("TileSetScenesCollectionSource_v1cf3")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-204.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -427,4 +428,6 @@ rendering_quadrant_size = 9
 position = Vector2(149, 159)
 collision_mask = 4
 
-[node name="Spawner" parent="." instance=ExtResource("6_ibkq5")]
+[node name="Warp" parent="." instance=ExtResource("7_ffdc4")]
+position = Vector2(992, 736)
+next_level = ExtResource("8_yi5ae")
