@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk0jmqqadufma"]
+
+[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_4xkno"]
+[ext_resource type="Script" path="res://assets/area_exit.gd" id="1_6ib3o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dssl"]
+atlas = ExtResource("1_4xkno")
+region = Rect2(576.909, 383.272, 62.5386, 60.7275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opl8m"]
+size = Vector2(184, 61)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_6ib3o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_0dssl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-62, 0)
+texture = SubResource("AtlasTexture_0dssl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(62, 0)
+texture = SubResource("AtlasTexture_0dssl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_opl8m")
