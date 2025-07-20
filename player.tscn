@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0wysm6c2nqgj"]
+[gd_scene load_steps=14 format=3 uid="uid://b0wysm6c2nqgj"]
 
 [ext_resource type="Script" uid="uid://bff4evm16ro7l" path="res://player.gd" id="1_26y8w"]
 [ext_resource type="Texture2D" uid="uid://fn3ats00hpd7" path="res://assets/sokoban_character.png" id="2_47llq"]
-[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://bbf63mexhoslk" path="res://systems/interacting.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tia2a"]
@@ -121,7 +120,6 @@ size = Vector2(96, 60)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_26y8w")
-cable_scene = ExtResource("2_hqtel")
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
 texture = ExtResource("2_47llq")

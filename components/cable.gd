@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var is_connected := false
+var has_connection := false
 
 func _ready() -> void:
 	Events.drop_plug.connect(_on_drop_plug)
@@ -8,9 +8,9 @@ func _ready() -> void:
 
 
 func _on_drop_plug():
-	if not is_connected:
+	if not has_connection:
 		self.queue_free()
 
 
 func _on_plug_in():
-	is_connected = true
+	has_connection = true

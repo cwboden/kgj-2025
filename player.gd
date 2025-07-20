@@ -1,7 +1,9 @@
 class_name Player
 extends Area2D
 
-@export var cable_scene = PackedScene
+@onready var cable_scene = preload("res://components/cable.tscn")
+@onready var projectile_scene = preload("res://components/projectile.tscn")
+
 @onready var ray = $RayCast_move
 
 var INPUTS = {
@@ -14,6 +16,7 @@ var INPUTS = {
 @export var can_jump = false
 @export var can_dash = false
 @export var can_shoot = false
+@export var direction = Vector2.DOWN
 
 var is_moving = false
 var is_carrying = false
@@ -31,8 +34,11 @@ func _ready():
 func _unhandled_input(event):
 	if is_moving:
 		return
+	if event.is_action_pressed("ui_accept") and can_shoot:
+		_shoot()
 	for dir in INPUTS.keys():
 		if event.is_action_pressed(dir):
+			direction = INPUTS[dir]
 			try_move(dir)
 
 
@@ -61,7 +67,8 @@ func try_move(dir):
 			_dash(dir)
 			_try_lay_cable(old_position)
 			_try_lay_cable(old_position + delta)
-		
+
+
 func _move(dir):
 	var delta = INPUTS[dir] * Globals.TILE_SIZE
 	var tween = get_tree().create_tween()
@@ -121,7 +128,16 @@ func _try_lay_cable(drop_position):
 
 
 func _lay_cable(drop_position):
-	Spawning.spawn.emit(cable_scene, drop_position)
+	var cable = cable_scene.instantiate()
+	cable.position = drop_position
+	owner.add_child(cable)
+
+
+func _shoot():
+	var projectile = projectile_scene.instantiate()
+	projectile.position = position
+	projectile.direction = direction
+	owner.add_child(projectile)
 
 
 func _on_grab_plug():
