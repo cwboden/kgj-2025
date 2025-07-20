@@ -41,6 +41,8 @@ func _unhandled_input(event):
 		if event.is_action_pressed(dir):
 			direction = INPUTS[dir]
 			try_move(dir)
+	if event.is_action_pressed("ui_undo"):
+		get_tree().reload_current_scene()
 
 
 func try_move(dir):
