@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dqa2no2314sl2"]
+[gd_scene load_steps=13 format=4 uid="uid://bkq7051y3ad4e"]
 
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_igjlb"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_rauqk"]

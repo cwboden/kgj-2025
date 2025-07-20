@@ -34,8 +34,9 @@ func _ready():
 func _unhandled_input(event):
 	if is_moving:
 		return
-	if event.is_action_pressed("ui_accept") and can_shoot:
-		_shoot()
+	if event.is_action_pressed("ui_accept"):
+		if can_shoot:
+			_shoot()
 	for dir in INPUTS.keys():
 		if event.is_action_pressed(dir):
 			direction = INPUTS[dir]
@@ -126,8 +127,10 @@ func _try_lay_cable(drop_position):
 		if is_plugging_in:
 			print("plugging in!")
 			Sounds.plug_in.play()
+			Sounds.zap.play()
 			Events.plug_in.emit()
 			is_carrying = false
+			is_plugging_in = false
 
 
 func _lay_cable(drop_position):
@@ -142,6 +145,7 @@ func _shoot():
 	projectile.position = position
 	projectile.direction = direction
 	owner.add_child(projectile)
+	Sounds.shoot.play()
 
 
 func _on_grab_plug():

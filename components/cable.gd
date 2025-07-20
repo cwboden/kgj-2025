@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+@onready var sparks = $Sparks
+
 var has_connection := false
 
 func _ready() -> void:
@@ -14,3 +16,11 @@ func _on_drop_plug():
 
 func _on_plug_in():
 	has_connection = true
+	
+
+func _process(_delta: float) -> void:
+	if has_connection:
+		sparks.show()
+	else:
+		sparks.hide()
+		

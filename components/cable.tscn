@@ -1,14 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bblimxojafocm"]
 
 [ext_resource type="Script" uid="uid://5r18568q8hq7" path="res://components/cable.gd" id="1_ktp8h"]
-[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="1_l8stc"]
+[ext_resource type="Texture2D" uid="uid://dbcd2tnw40oxu" path="res://assets/scifi-rts/Tilesheet/scifi_tilesheet.png" id="2_ktp8h"]
+[ext_resource type="Texture2D" uid="uid://c013o780sqht7" path="res://assets/PNG (Transparent)/star_06_small.png" id="3_frcu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktp8h"]
 size = Vector2(64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_frcu4"]
-atlas = ExtResource("1_l8stc")
-region = Rect2(768.21, 63.2038, 63.4394, 65.5424)
 
 [node name="Cable" type="StaticBody2D"]
 script = ExtResource("1_ktp8h")
@@ -17,4 +14,26 @@ script = ExtResource("1_ktp8h")
 shape = SubResource("RectangleShape2D_ktp8h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_frcu4")
+texture = ExtResource("2_ktp8h")
+hframes = 5
+vframes = 3
+frame = 2
+region_enabled = true
+region_rect = Rect2(576, 0, 320, 198)
+
+[node name="Sparks" type="CPUParticles2D" parent="."]
+amount = 6
+texture = ExtResource("3_frcu4")
+lifetime = 0.6
+explosiveness = 0.2
+emission_shape = 1
+emission_sphere_radius = 16.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 24.0
+initial_velocity_max = 36.0
+angular_velocity_min = 60.0
+angular_velocity_max = 80.0
+angle_min = -720.0
+angle_max = 720.0

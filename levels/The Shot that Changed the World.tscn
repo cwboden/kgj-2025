@@ -1,22 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://cnmj7qo2bflxv"]
 
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://levels/04.gd" id="1_4aw2o"]
-[ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_ilvr4"]
-[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_6wspl"]
-[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_mv2px"]
-[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="4_n84ga"]
-[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="5_70u7e"]
-[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="6_wugc0"]
-[ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="7_0kkpi"]
-[ext_resource type="PackedScene" uid="uid://co2w6jtma5xu7" path="res://components/target.tscn" id="8_f6csg"]
-[ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="8_usll4"]
-[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="9_00bdm"]
-[ext_resource type="PackedScene" uid="uid://ch4stae6ielko" path="res://levels/A Split Senario.tscn" id="10_nfvmm"]
-[ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://levels/04.gd" id="1_plyyy"]
-=======
-[ext_resource type="Script" path="res://levels/The Shot that Chnaged the World.gd" id="1_plyyy"]
->>>>>>> fd4260755319c6e954f13068e98a4e85be983d47
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="2_poilb"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="3_uyjjw"]
 [ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="4_fbi6n"]

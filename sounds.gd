@@ -9,3 +9,4 @@ extends Node
 @onready var plug_in = $PlugIn
 @onready var crash = $Crash
 @onready var thud = $Thud
+@onready var zap = $Zap
