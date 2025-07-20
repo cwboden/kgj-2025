@@ -1,17 +1,17 @@
 [gd_scene load_steps=14 format=4 uid="uid://ch4stae6ielko"]
 
-[ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_xgp0m"]
-[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_ca38e"]
-[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_wjsh6"]
-[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="4_q5kur"]
-[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="5_0l3et"]
-[ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="6_2xe06"]
-[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="6_ektp3"]
-[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="8_k05dv"]
-[ext_resource type="PackedScene" uid="uid://co2w6jtma5xu7" path="res://components/target.tscn" id="9_sm4es"]
+[ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_x57hk"]
+[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_4j17c"]
+[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_ljkcb"]
+[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="4_rnv46"]
+[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="5_q68va"]
+[ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="6_6r3i7"]
+[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="7_ybxtu"]
+[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="8_h4rfo"]
+[ext_resource type="PackedScene" uid="uid://co2w6jtma5xu7" path="res://components/target.tscn" id="9_j63cj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um4do"]
-texture = ExtResource("1_xgp0m")
+texture = ExtResource("1_x57hk")
 margins = Vector2i(16, 30)
 texture_region_size = Vector2i(67, 64)
 0:0/0 = 0
@@ -282,7 +282,7 @@ texture_region_size = Vector2i(67, 64)
 6:31/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftd6n"]
-texture = ExtResource("2_ca38e")
+texture = ExtResource("2_4j17c")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 2:0/0 = 0
@@ -391,10 +391,10 @@ texture_region_size = Vector2i(64, 64)
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_v1cf3"]
-scenes/1/scene = ExtResource("3_wjsh6")
-scenes/2/scene = ExtResource("4_q5kur")
-scenes/3/scene = ExtResource("5_0l3et")
-scenes/4/scene = ExtResource("6_2xe06")
+scenes/1/scene = ExtResource("3_ljkcb")
+scenes/2/scene = ExtResource("4_rnv46")
+scenes/3/scene = ExtResource("5_q68va")
+scenes/4/scene = ExtResource("6_6r3i7")
 
 [sub_resource type="TileSet" id="TileSet_ku0ah"]
 tile_size = Vector2i(64, 64)
@@ -423,7 +423,7 @@ tile_map_data = PackedByteArray("AAAKAAsAAQADAAMAAAAKAAwAAQADAAMAAAA=")
 tile_set = SubResource("TileSet_ku0ah")
 rendering_quadrant_size = 9
 
-[node name="Player" parent="." instance=ExtResource("6_ektp3")]
+[node name="Player" parent="." instance=ExtResource("7_ybxtu")]
 position = Vector2(-128, 102)
 collision_mask = 4
 
@@ -432,37 +432,37 @@ position = Vector2(225, 449)
 
 [node name="Plugs" type="Node" parent="."]
 
-[node name="Plug" parent="Plugs" instance=ExtResource("5_0l3et")]
+[node name="Plug" parent="Plugs" instance=ExtResource("5_q68va")]
 position = Vector2(-224, 800)
 type = 1
 
-[node name="Plug2" parent="Plugs" instance=ExtResource("5_0l3et")]
+[node name="Plug2" parent="Plugs" instance=ExtResource("5_q68va")]
 position = Vector2(736, 288)
 type = 2
 
-[node name="Plug3" parent="Plugs" instance=ExtResource("5_0l3et")]
+[node name="Plug3" parent="Plugs" instance=ExtResource("5_q68va")]
 position = Vector2(288, 32)
 
 [node name="Outlits" type="Node" parent="."]
 
-[node name="Outlet" parent="Outlits" instance=ExtResource("3_wjsh6")]
+[node name="Outlet" parent="Outlits" instance=ExtResource("3_ljkcb")]
 position = Vector2(608, 96)
 
-[node name="Outlet3" parent="Outlits" instance=ExtResource("3_wjsh6")]
+[node name="Outlet3" parent="Outlits" instance=ExtResource("3_ljkcb")]
 position = Vector2(-288, 608)
 
-[node name="Outlet2" parent="Outlits" instance=ExtResource("3_wjsh6")]
+[node name="Outlet2" parent="Outlits" instance=ExtResource("3_ljkcb")]
 position = Vector2(224, 864)
 
 [node name="Doors" type="Node" parent="."]
 
 [node name="Warps" type="Node" parent="."]
 
-[node name="Warp" parent="Warps" instance=ExtResource("8_k05dv")]
+[node name="Warp" parent="Warps" instance=ExtResource("8_h4rfo")]
 position = Vector2(736, 736)
 
-[node name="Warp2" parent="Warps" instance=ExtResource("8_k05dv")]
+[node name="Warp2" parent="Warps" instance=ExtResource("8_h4rfo")]
 position = Vector2(736, 800)
 
-[node name="Target" parent="." instance=ExtResource("9_sm4es")]
+[node name="Target" parent="." instance=ExtResource("9_j63cj")]
 position = Vector2(672, 672)

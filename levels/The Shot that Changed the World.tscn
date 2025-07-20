@@ -1,20 +1,21 @@
-[gd_scene load_steps=17 format=4 uid="uid://cnmj7qo2bflxv"]
+[gd_scene load_steps=18 format=4 uid="uid://cnmj7qo2bflxv"]
 
-[ext_resource type="Script" path="res://levels/04.gd" id="1_4aw2o"]
-[ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_ilvr4"]
-[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_6wspl"]
-[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_mv2px"]
-[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="4_n84ga"]
-[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="5_70u7e"]
-[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="6_wugc0"]
-[ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="7_0kkpi"]
-[ext_resource type="PackedScene" uid="uid://co2w6jtma5xu7" path="res://components/target.tscn" id="8_f6csg"]
-[ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="8_usll4"]
-[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="9_00bdm"]
-[ext_resource type="PackedScene" uid="uid://ch4stae6ielko" path="res://levels/05.tscn" id="10_nfvmm"]
+[ext_resource type="Script" path="res://levels/04.gd" id="1_plyyy"]
+[ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="2_poilb"]
+[ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="3_uyjjw"]
+[ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="4_fbi6n"]
+[ext_resource type="PackedScene" uid="uid://bblimxojafocm" path="res://components/cable.tscn" id="5_tscw5"]
+[ext_resource type="PackedScene" uid="uid://6i7n5xk3thg7" path="res://components/plug.tscn" id="6_dhkjb"]
+[ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="7_gy2k6"]
+[ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="8_7nuux"]
+[ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="9_3slwc"]
+[ext_resource type="PackedScene" uid="uid://co2w6jtma5xu7" path="res://components/target.tscn" id="10_1fu6c"]
+[ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="11_8qps7"]
+[ext_resource type="PackedScene" uid="uid://ch4stae6ielko" path="res://levels/A Split Senario.tscn" id="12_cjpbb"]
+[ext_resource type="PackedScene" uid="uid://cgrjbi2pejlo0" path="res://levels/The Merging.tscn" id="12_s5te1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmc16"]
-texture = ExtResource("1_ilvr4")
+texture = ExtResource("2_poilb")
 margins = Vector2i(16, 30)
 texture_region_size = Vector2i(67, 64)
 0:0/0 = 0
@@ -285,7 +286,7 @@ texture_region_size = Vector2i(67, 64)
 6:31/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n8w1"]
-texture = ExtResource("2_6wspl")
+texture = ExtResource("3_uyjjw")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 2:0/0 = 0
@@ -393,10 +394,10 @@ texture_region_size = Vector2i(64, 64)
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xs82t"]
-scenes/1/scene = ExtResource("3_mv2px")
-scenes/2/scene = ExtResource("4_n84ga")
-scenes/3/scene = ExtResource("5_70u7e")
-scenes/4/scene = ExtResource("7_0kkpi")
+scenes/1/scene = ExtResource("4_fbi6n")
+scenes/2/scene = ExtResource("5_tscw5")
+scenes/3/scene = ExtResource("6_dhkjb")
+scenes/4/scene = ExtResource("7_gy2k6")
 
 [sub_resource type="TileSet" id="TileSet_ji0am"]
 tile_size = Vector2i(64, 64)
@@ -406,7 +407,7 @@ sources/0 = SubResource("TileSetAtlasSource_bmc16")
 sources/2 = SubResource("TileSetScenesCollectionSource_xs82t")
 
 [node name="Level 4" type="Node2D"]
-script = ExtResource("1_4aw2o")
+script = ExtResource("1_plyyy")
 
 [node name="Floor" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAAAAAQALAAYAAAADAAEAAQALAAYAAAADAAIAAQALAAYAAAADAAMAAQALAAYAAAADAAUAAQALAAYAAAAEAAAAAQALAAYAAAAEAAEAAQALAAYAAAAEAAIAAQALAAYAAAAEAAMAAQALAAYAAAAEAAUAAQALAAYAAAAFAAAAAQALAAYAAAAFAAEAAQALAAYAAAAFAAIAAQALAAYAAAAFAAMAAQALAAYAAAAFAAQAAQALAAYAAAAFAAUAAQALAAYAAAAGAAAAAQALAAYAAAAGAAEAAQALAAYAAAAGAAIAAQALAAYAAAAGAAMAAQALAAYAAAAGAAQAAQALAAYAAAAGAAUAAQALAAYAAAAHAAIAAQALAAYAAAAHAAMAAQALAAYAAAAHAAQAAQALAAYAAAAHAAUAAQALAAYAAAAIAAIAAQALAAYAAAAIAAMAAQALAAYAAAAIAAQAAQALAAYAAAAIAAUAAQALAAYAAAAJAAIAAQALAAYAAAAJAAMAAQALAAYAAAAJAAQAAQALAAYAAAAJAAUAAQALAAYAAAAKAAIAAQALAAYAAAAKAAMAAQALAAYAAAAKAAQAAQALAAYAAAAKAAUAAQALAAYAAAALAAIAAQALAAYAAAALAAMAAQALAAYAAAALAAQAAQALAAYAAAALAAUAAQALAAYAAAD7/wIAAQALAAYAAAD7/wMAAQALAAYAAAD7/wQAAQALAAYAAAD7/wUAAQALAAYAAAD7/wYAAQALAAYAAAD7/wcAAQALAAYAAAD7/wgAAQALAAYAAAD7/wkAAQALAAYAAAD8/wIAAQALAAYAAAD8/wMAAQALAAYAAAD8/wUAAQALAAYAAAD8/wYAAQALAAYAAAD8/wcAAQALAAYAAAD8/wgAAQALAAYAAAD8/wkAAQALAAYAAAD9/wEAAQALAAYAAAD9/wIAAQALAAYAAAD9/wMAAQALAAYAAAD9/wUAAQALAAYAAAD9/wYAAQALAAYAAAD9/wcAAQALAAYAAAD9/wgAAQALAAYAAAD9/wkAAQALAAYAAAD+/wAAAQALAAYAAAD+/wIAAQALAAYAAAD+/wMAAQALAAYAAAD+/wUAAQALAAYAAAD+/wYAAQALAAYAAAD+/wcAAQALAAYAAAD+/wgAAQALAAYAAAD+/wkAAQALAAYAAAD//wAAAQALAAYAAAD//wEAAQALAAYAAAD//wIAAQALAAYAAAD//wMAAQALAAYAAAD//wUAAQALAAYAAAD//wYAAQALAAYAAAD//wcAAQALAAYAAAD//wgAAQALAAYAAAD//wkAAQALAAYAAAAAAAAAAQALAAYAAAAAAAEAAQALAAYAAAAAAAIAAQALAAYAAAAAAAMAAQALAAYAAAAAAAUAAQALAAYAAAAAAAYAAQALAAYAAAAAAAcAAQALAAYAAAAAAAgAAQALAAYAAAAAAAkAAQALAAYAAAABAAAAAQALAAYAAAABAAEAAQALAAYAAAABAAIAAQALAAYAAAABAAMAAQALAAYAAAABAAUAAQALAAYAAAABAAYAAQALAAYAAAABAAcAAQALAAYAAAABAAgAAQALAAYAAAABAAkAAQALAAYAAAACAAAAAQALAAYAAAACAAEAAQALAAYAAAACAAIAAQALAAYAAAACAAUAAQALAAYAAAACAAYAAQALAAYAAAACAAgAAQALAAYAAAACAAkAAQALAAYAAAADAAYAAQALAAYAAAADAAcAAQALAAYAAAADAAgAAQALAAYAAAADAAkAAQALAAYAAAAEAAYAAQALAAYAAAAEAAcAAQALAAYAAAAEAAgAAQALAAYAAAAEAAkAAQALAAYAAAAFAAYAAQALAAYAAAAFAAcAAQALAAYAAAAFAAgAAQALAAYAAAAFAAkAAQALAAYAAAAGAAYAAQALAAYAAAAGAAcAAQALAAYAAAAGAAgAAQALAAYAAAAGAAkAAQALAAYAAAAHAAYAAQALAAYAAAAHAAcAAQALAAYAAAAHAAgAAQALAAYAAAAHAAkAAQALAAYAAAAIAAYAAQALAAYAAAAIAAcAAQALAAYAAAAIAAgAAQALAAYAAAAIAAkAAQALAAYAAAAJAAYAAQALAAYAAAAJAAcAAQALAAYAAAAJAAgAAQALAAYAAAAJAAkAAQALAAYAAAAKAAYAAQALAAYAAAAKAAcAAQALAAYAAAAKAAgAAQALAAYAAAAKAAkAAQALAAYAAAALAAYAAQALAAYAAAALAAcAAQALAAYAAAALAAgAAQALAAYAAAALAAkAAQALAAYAAAD7/woAAQALAAYAAAD7/wsAAQALAAYAAAD7/wwAAQALAAYAAAD7/w0AAQALAAYAAAD8/woAAQALAAYAAAD8/wsAAgAAAAAABAD8/wwAAQALAAYAAAD8/w0AAQALAAYAAAD9/wsAAgAAAAAABAD9/wwAAQALAAYAAAD9/w0AAQALAAYAAAD+/wsAAgAAAAAABAD+/wwAAQALAAYAAAD+/w0AAQALAAYAAAD//wsAAgAAAAAABAD//wwAAQALAAYAAAD//w0AAQALAAYAAAAAAAoAAQALAAYAAAAAAAsAAgAAAAAABAAAAAwAAQALAAYAAAAAAA0AAQALAAYAAAABAAoAAQALAAYAAAABAAsAAgAAAAAABAABAAwAAQALAAYAAAABAA0AAQALAAYAAAACAAoAAQALAAYAAAACAAsAAgAAAAAABAADAAoAAQALAAYAAAADAAsAAgAAAAAABAAEAAoAAQALAAYAAAAEAAsAAgAAAAAABAAFAAoAAQALAAYAAAAFAAsAAgAAAAAABAAFAA0AAQALAAYAAAAGAA0AAQALAAYAAAAHAAsAAgAAAAAABAAHAAwAAQALAAYAAAAHAA0AAQALAAYAAAAIAAsAAgAAAAAABAAIAAwAAQALAAYAAAAIAA0AAQALAAYAAAAJAAsAAgAAAAAABAAJAAwAAQALAAYAAAAJAA0AAQALAAYAAAAKAAsAAgAAAAAABAAKAAwAAQALAAYAAAAKAA0AAQALAAYAAAALAAsAAQALAAYAAAALAAwAAQALAAYAAAALAA0AAQALAAYAAAAGAAoAAQALAAYAAAAGAAsAAgAAAAAABAAHAAoAAQALAAYAAAAIAAoAAQALAAYAAAAJAAoAAQALAAYAAAAKAAoAAQALAAYAAAALAAoAAQALAAYAAAACAAwAAQALAAYAAAADAAwAAQALAAYAAAAEAAwAAQALAAYAAAACAAcAAQALAAYAAAD+/wEAAQALAAYAAAAFAAwAAQALAAYAAAAGAAwAAQALAAYAAAD8/wQAAQALAAYAAAD9/wQAAQALAAYAAAD+/wQAAQALAAYAAAD//wQAAQALAAYAAAAAAAQAAQALAAYAAAABAAQAAQALAAYAAAACAAQAAQALAAYAAAACAAMAAQALAAYAAAADAAQAAQALAAYAAAAEAAQAAQALAAYAAAD9/woAAQALAAYAAAD+/woAAQALAAYAAAD//woAAQALAAYAAAAHAAEAAQALAAYAAAAHAAAAAQALAAYAAAAIAAAAAQALAAYAAAAIAAEAAQALAAYAAAAJAAEAAQALAAYAAAAKAAEAAQALAAYAAAALAAEAAQALAAYAAAD8/wEAAQALAAYAAAD7/wEAAQALAAYAAAACAA0AAQAJAAYAAAADAA0AAQAJAAYAAAAEAA0AAQAJAAYAAAA=")
@@ -421,78 +422,78 @@ tile_set = SubResource("TileSet_ji0am")
 tile_map_data = PackedByteArray("AAADAAUAAQADAAMAAAAEAAUAAQADAAMAAAAFAAUAAQADAAMAAAAGAAUAAQADAAMAAAAJAAUAAQADAAMAAAAKAAUAAQADAAMAAAAHAAUAAQADAAMAAAAIAAUAAQADAAMAAAD8/wYAAQADAAMAAAD9/wYAAQADAAMAAAD+/wYAAQADAAMAAAD//wYAAQADAAMAAAAAAAYAAQADAAMAAAABAAYAAQADAAMAAAACAAYAAQADAAMAAAADAAYAAQADAAMAAAAEAAYAAQADAAMAAAAHAAYAAQADAAMAAAAIAAYAAQADAAMAAAAJAAYAAQADAAMAAAAKAAYAAQADAAMAAAAGAAYAAQADAAMAAAAFAAYAAQADAAMAAAD8/wUAAQADAAMAAAD9/wUAAQADAAMAAAD+/wUAAQADAAMAAAD//wUAAQADAAMAAAAAAAUAAQADAAMAAAABAAUAAQADAAMAAAACAAUAAQADAAMAAAA=")
 tile_set = SubResource("TileSet_ji0am")
 
-[node name="Plug" parent="." instance=ExtResource("5_70u7e")]
+[node name="Plug" parent="." instance=ExtResource("6_dhkjb")]
 position = Vector2(-288, 224)
 type = 2
 
-[node name="Player" parent="." instance=ExtResource("6_wugc0")]
+[node name="Player" parent="." instance=ExtResource("8_7nuux")]
 position = Vector2(201, 96)
 collision_mask = 4
 can_jump = true
 can_dash = true
 
-[node name="Outlet" parent="." instance=ExtResource("3_mv2px")]
+[node name="Outlet" parent="." instance=ExtResource("4_fbi6n")]
 position = Vector2(736, 224)
 
 [node name="Doors" type="Node" parent="."]
 
-[node name="Door" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(-224, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door2" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door2" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(-160, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door3" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door3" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(-96, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door4" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door4" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(-32, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door5" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door5" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(32, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door6" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door6" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(96, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door7" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door7" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(160, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door8" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door8" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(224, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door9" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door9" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(288, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door10" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door10" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(352, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door11" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door11" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(416, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door12" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door12" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(480, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door13" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door13" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(544, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door14" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door14" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(608, 288)
 plug = NodePath("../../Plug")
 
-[node name="Door15" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("8_usll4")]
+[node name="Door15" parent="Doors" node_paths=PackedStringArray("plug") instance=ExtResource("9_3slwc")]
 position = Vector2(672, 288)
 plug = NodePath("../../Plug")
 
@@ -501,35 +502,35 @@ position = Vector2(224, 480)
 
 [node name="targets" type="Node" parent="."]
 
-[node name="Target" parent="targets" instance=ExtResource("8_f6csg")]
+[node name="Target" parent="targets" instance=ExtResource("10_1fu6c")]
 position = Vector2(-160, 544)
 
-[node name="Target2" parent="targets" instance=ExtResource("8_f6csg")]
+[node name="Target2" parent="targets" instance=ExtResource("10_1fu6c")]
 position = Vector2(-32, 544)
 
-[node name="Target3" parent="targets" instance=ExtResource("8_f6csg")]
+[node name="Target3" parent="targets" instance=ExtResource("10_1fu6c")]
 position = Vector2(96, 544)
 
-[node name="Target4" parent="targets" instance=ExtResource("8_f6csg")]
+[node name="Target4" parent="targets" instance=ExtResource("10_1fu6c")]
 position = Vector2(224, 544)
 
-[node name="Target5" parent="targets" instance=ExtResource("8_f6csg")]
+[node name="Target5" parent="targets" instance=ExtResource("10_1fu6c")]
 position = Vector2(352, 544)
 
-[node name="Target6" parent="targets" instance=ExtResource("8_f6csg")]
+[node name="Target6" parent="targets" instance=ExtResource("10_1fu6c")]
 position = Vector2(480, 544)
 
-[node name="Target7" parent="targets" instance=ExtResource("8_f6csg")]
+[node name="Target7" parent="targets" instance=ExtResource("10_1fu6c")]
 position = Vector2(608, 544)
 
-[node name="Warp" parent="." instance=ExtResource("9_00bdm")]
+[node name="Warp" parent="." instance=ExtResource("11_8qps7")]
 position = Vector2(288, 864)
-next_level = ExtResource("10_nfvmm")
+next_level = ExtResource("12_s5te1")
 
-[node name="Warp2" parent="." instance=ExtResource("9_00bdm")]
+[node name="Warp2" parent="." instance=ExtResource("11_8qps7")]
 position = Vector2(224, 864)
-next_level = ExtResource("10_nfvmm")
+next_level = ExtResource("12_s5te1")
 
-[node name="Warp3" parent="." instance=ExtResource("9_00bdm")]
+[node name="Warp3" parent="." instance=ExtResource("11_8qps7")]
 position = Vector2(160, 864)
-next_level = ExtResource("10_nfvmm")
+next_level = ExtResource("12_cjpbb")
