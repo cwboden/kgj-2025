@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="6_ckan1"]
 [ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="8_pjin2"]
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="9_pyuxa"]
-[ext_resource type="PackedScene" uid="uid://cnmj7qo2bflxv" path="res://levels/The Shot that Changed the World.tscn" id="10_s76fh"]
+[ext_resource type="PackedScene" uid="uid://dv0eddy5rntil" path="res://levels/_template.tscn" id="10_s76fh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmc16"]
 texture = ExtResource("1_4i8mj")
@@ -582,6 +582,5 @@ position = Vector2(544, 864)
 next_level = ExtResource("10_s76fh")
 
 [node name="Warp3" parent="." instance=ExtResource("9_pyuxa")]
-position = Vector2(416, 864)
-scale = Vector2(1, 0.770053)
+position = Vector2(417, 863)
 next_level = ExtResource("10_s76fh")
