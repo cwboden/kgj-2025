@@ -403,7 +403,7 @@ sources/1 = SubResource("TileSetAtlasSource_ftd6n")
 sources/0 = SubResource("TileSetAtlasSource_um4do")
 sources/2 = SubResource("TileSetScenesCollectionSource_v1cf3")
 
-[node name="Node2D2" type="Node2D"]
+[node name="Level" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-204.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

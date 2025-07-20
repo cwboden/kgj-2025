@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0wysm6c2nqgj"]
+[gd_scene load_steps=16 format=3 uid="uid://b0wysm6c2nqgj"]
 
 [ext_resource type="Script" uid="uid://bff4evm16ro7l" path="res://player.gd" id="1_26y8w"]
 [ext_resource type="Texture2D" uid="uid://fn3ats00hpd7" path="res://assets/sokoban_character.png" id="2_47llq"]
+[ext_resource type="AudioStream" uid="uid://jbga31uj3cxq" path="res://assets/sounds/footsteps.wav" id="3_hqtel"]
 [ext_resource type="Script" uid="uid://bbf63mexhoslk" path="res://systems/interacting.gd" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://db4750c47tjbb" path="res://resources/footsteps.tres" id="4_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tia2a"]
 size = Vector2(32, 32)
@@ -37,6 +39,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [6, 7, 6, 8, 6]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0128745,
+"stream": ExtResource("3_hqtel")
+}],
+"times": PackedFloat32Array(0.0666667)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_hqtel"]
 resource_name = "jump"
@@ -69,6 +86,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [21, 22, 21, 23, 21]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.74,
+"start_offset": 2.47,
+"stream": ExtResource("3_hqtel")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_7vjps"]
 resource_name = "right"
@@ -85,6 +117,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [18, 19, 18, 20, 18]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 2.75,
+"start_offset": 0.47,
+"stream": ExtResource("4_sweqy")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_1mx5g"]
 resource_name = "up"
@@ -101,6 +148,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [9, 10, 9, 11, 9]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 2.35,
+"start_offset": 0.85,
+"stream": ExtResource("4_sweqy")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3qh4"]
 _data = {
@@ -119,6 +181,7 @@ size = Vector2(60, 96)
 size = Vector2(96, 60)
 
 [node name="Player" type="Area2D"]
+z_index = 1
 script = ExtResource("1_26y8w")
 
 [node name="Sprite2d" type="Sprite2D" parent="."]
@@ -138,6 +201,8 @@ root_node = NodePath("../RayCast_move")
 libraries = {
 &"": SubResource("AnimationLibrary_e3qh4")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer"]
 
 [node name="Interacting" type="Node2D" parent="."]
 script = ExtResource("3_i3pqv")

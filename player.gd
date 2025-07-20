@@ -95,6 +95,7 @@ func _jump(dir):
 		).set_trans(Tween.TRANS_SINE)
 	
 	is_moving = true
+	Sounds.jump.play()
 	$AnimationPlayer.play("jump")
 	await tween.finished
 	is_moving = false
@@ -111,6 +112,7 @@ func _dash(dir):
 		).set_trans(Tween.TRANS_SINE)
 	
 	is_moving = true
+	Sounds.dash.play()
 	$AnimationPlayer.speed_scale = 2.0
 	$AnimationPlayer.play(dir)
 	await tween.finished
@@ -123,6 +125,7 @@ func _try_lay_cable(drop_position):
 		_lay_cable(drop_position)
 		if is_plugging_in:
 			print("plugging in!")
+			Sounds.plug_in.play()
 			Events.plug_in.emit()
 			is_carrying = false
 
@@ -131,6 +134,7 @@ func _lay_cable(drop_position):
 	var cable = cable_scene.instantiate()
 	cable.position = drop_position
 	owner.add_child(cable)
+	Sounds.thud.play()
 
 
 func _shoot():
@@ -141,6 +145,7 @@ func _shoot():
 
 
 func _on_grab_plug():
+	Sounds.pickup.play()
 	is_carrying = true
 
 
@@ -151,6 +156,7 @@ func _on_drop_plug():
 
 func _on_try_plug_in():
 	if is_carrying:
+		Sounds.pickup.play()
 		is_plugging_in = true
 
 

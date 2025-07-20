@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://cnmj7qo2bflxv"]
 
-[ext_resource type="Script" path="res://levels/04.gd" id="1_4aw2o"]
+[ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://levels/04.gd" id="1_4aw2o"]
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_ilvr4"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_6wspl"]
 [ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="3_mv2px"]
@@ -405,7 +405,7 @@ sources/1 = SubResource("TileSetAtlasSource_7n8w1")
 sources/0 = SubResource("TileSetAtlasSource_bmc16")
 sources/2 = SubResource("TileSetScenesCollectionSource_xs82t")
 
-[node name="Level 4" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_4aw2o")
 
 [node name="Floor" type="TileMapLayer" parent="."]

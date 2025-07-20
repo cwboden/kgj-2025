@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="7_ffdc4"]
 [ext_resource type="PackedScene" uid="uid://spcxpuah152r" path="res://levels/02.tscn" id="8_yi5ae"]
 
-[node name="Node2D3" type="Node2D"]
+[node name="Level" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-204.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

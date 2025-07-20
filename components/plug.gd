@@ -28,18 +28,18 @@ enum Setting {
 var SETTINGS = {
 	PlugType.JUMP: {
 		Setting.ABILITY: Events.Ability.JUMP,
-		Setting.FRAME: 1,
+		Setting.FRAME: 0,
 	},
 	PlugType.DASH: {
 		Setting.ABILITY: Events.Ability.DASH,
-		Setting.FRAME: 2,
+		Setting.FRAME: 1,
 	},
 	PlugType.SHOOT: {
 		Setting.ABILITY: Events.Ability.SHOOT,
-		Setting.FRAME: 3,
+		Setting.FRAME: 2,
 	},
 	PlugType.CUSTOM: {
-		Setting.FRAME: 4,
+		Setting.FRAME: 3,
 	}
 }
 

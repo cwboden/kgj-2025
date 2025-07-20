@@ -3,10 +3,37 @@
 [ext_resource type="Script" uid="uid://3r8kcshxt1re" path="res://menus/main.gd" id="1_7khdk"]
 [ext_resource type="Theme" uid="uid://bexh7jwgl5twv" path="res://menus/expedition.tres" id="1_rnu0y"]
 [ext_resource type="Texture2D" uid="uid://cjxejh72gqga0" path="res://assets/PNG/White/2x/right.png" id="3_gvix4"]
-[ext_resource type="PackedScene" uid="uid://dkafvga6wjndr" path="res://levels/01.tscn" id="3_kes4h"]
+[ext_resource type="PackedScene" uid="uid://cgrjbi2pejlo0" path="res://levels/01.tscn" id="3_kes4h"]
 [ext_resource type="TileSet" uid="uid://j3fhy4qx8t7m" path="res://resources/tile-set.tres" id="4_d7jbi"]
 [ext_resource type="Texture2D" uid="uid://dip05evfr6njk" path="res://assets/PNG/White/2x/gear.png" id="4_kes4h"]
 [ext_resource type="Texture2D" uid="uid://cnbvk8b72ftr1" path="res://assets/PNG/White/2x/power.png" id="5_d7jbi"]
+
+[sub_resource type="Animation" id="Animation_7khdk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitleLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ncfug"]
 resource_name = "pulsate"
@@ -35,33 +62,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-80, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7khdk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TitleLabel:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TitleLabel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qeakq"]
