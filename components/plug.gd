@@ -38,6 +38,9 @@ var SETTINGS = {
 		Setting.ABILITY: Events.Ability.SHOOT,
 		Setting.FRAME: 3,
 	},
+	PlugType.CUSTOM: {
+		Setting.FRAME: 4,
+	}
 }
 
 func _ready():
