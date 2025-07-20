@@ -582,6 +582,5 @@ position = Vector2(544, 864)
 next_level = ExtResource("10_s76fh")
 
 [node name="Warp3" parent="." instance=ExtResource("9_pyuxa")]
-position = Vector2(416, 864)
-scale = Vector2(1, 0.770053)
+position = Vector2(417, 863)
 next_level = ExtResource("10_s76fh")
