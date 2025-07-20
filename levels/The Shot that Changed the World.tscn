@@ -1,5 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://cnmj7qo2bflxv"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://levels/04.gd" id="1_4aw2o"]
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_ilvr4"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_6wspl"]
@@ -13,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="9_00bdm"]
 [ext_resource type="PackedScene" uid="uid://ch4stae6ielko" path="res://levels/A Split Senario.tscn" id="10_nfvmm"]
 [ext_resource type="Script" uid="uid://ct502j8rakrp3" path="res://levels/04.gd" id="1_plyyy"]
+=======
+[ext_resource type="Script" path="res://levels/The Shot that Chnaged the World.gd" id="1_plyyy"]
+>>>>>>> fd4260755319c6e954f13068e98a4e85be983d47
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="2_poilb"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="3_uyjjw"]
 [ext_resource type="PackedScene" uid="uid://cx3qdrxffivea" path="res://components/outlet.tscn" id="4_fbi6n"]
