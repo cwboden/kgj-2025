@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bkq7051y3ad4e"]
+[gd_scene load_steps=15 format=4 uid="uid://bkq7051y3ad4e"]
 
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_44xsx"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_plyoo"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="7_8ryuh"]
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="8_7e5a8"]
 [ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="9_j25jp"]
+[ext_resource type="PackedScene" uid="uid://cwdb20vgfnvwr" path="res://menus/thanks_for_playing.tscn" id="9_uwqtv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um4do"]
 texture = ExtResource("1_44xsx")
@@ -404,7 +405,7 @@ sources/1 = SubResource("TileSetAtlasSource_ftd6n")
 sources/0 = SubResource("TileSetAtlasSource_um4do")
 sources/2 = SubResource("TileSetScenesCollectionSource_v1cf3")
 
-[node name="Node2D2" type="Node2D"]
+[node name="Level" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-204.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -446,23 +447,20 @@ type = 1
 [node name="Plug3" parent="Plugs" instance=ExtResource("5_ywhpc")]
 position = Vector2(-96, 96)
 
-[node name="Outlits" type="Node" parent="."]
+[node name="Outlets" type="Node" parent="."]
 
-[node name="Outlet" parent="Outlits" instance=ExtResource("3_qtitk")]
+[node name="Outlet" parent="Outlets" instance=ExtResource("3_qtitk")]
 position = Vector2(-288, 160)
 
-[node name="Outlet3" parent="Outlits" instance=ExtResource("3_qtitk")]
+[node name="Outlet3" parent="Outlets" instance=ExtResource("3_qtitk")]
 position = Vector2(-288, 96)
 
-[node name="Outlet2" parent="Outlits" instance=ExtResource("3_qtitk")]
+[node name="Outlet2" parent="Outlets" instance=ExtResource("3_qtitk")]
 position = Vector2(608, 864)
 
-[node name="Doors" type="Node" parent="."]
-
-[node name="Warps" type="Node" parent="."]
-
-[node name="Warp2" parent="Warps" instance=ExtResource("8_7e5a8")]
+[node name="Warp" parent="." instance=ExtResource("8_7e5a8")]
 position = Vector2(736, 864)
+next_level = ExtResource("9_uwqtv")
 
 [node name="Door" parent="." node_paths=PackedStringArray("plug") instance=ExtResource("9_j25jp")]
 position = Vector2(736, 800)
