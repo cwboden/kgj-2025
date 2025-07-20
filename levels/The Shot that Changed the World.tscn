@@ -426,7 +426,7 @@ position = Vector2(-288, 224)
 type = 2
 
 [node name="Player" parent="." instance=ExtResource("8_7nuux")]
-position = Vector2(201, 96)
+position = Vector2(47, 799)
 collision_mask = 4
 can_jump = true
 can_dash = true

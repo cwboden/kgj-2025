@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bkq7051y3ad4e"]
+[gd_scene load_steps=14 format=4 uid="uid://bkq7051y3ad4e"]
 
 [ext_resource type="Texture2D" uid="uid://cy0kbu0mmhbqm" path="res://assets/Spritesheet/sheet_white2x.png" id="1_44xsx"]
 [ext_resource type="Texture2D" uid="uid://cibcntstf71xs" path="res://assets/sokoban_tilesheet.png" id="2_plyoo"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bmhxiehrwwaod" path="res://components/hole.tscn" id="6_fap4e"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://player.tscn" id="7_8ryuh"]
 [ext_resource type="PackedScene" uid="uid://dxsvqjv1h03im" path="res://components/warp.tscn" id="8_7e5a8"]
+[ext_resource type="PackedScene" uid="uid://dia444kqistjd" path="res://components/door.tscn" id="9_j25jp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um4do"]
 texture = ExtResource("1_44xsx")
@@ -288,6 +289,7 @@ texture_region_size = Vector2i(64, 64)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:0/0 = 0
 7:0/0 = 0
 8:0/0 = 0
@@ -426,7 +428,6 @@ rendering_quadrant_size = 9
 position = Vector2(-32, 96)
 collision_mask = 4
 can_dash = true
-can_shoot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(225, 449)
@@ -454,7 +455,7 @@ position = Vector2(-288, 160)
 position = Vector2(-288, 96)
 
 [node name="Outlet2" parent="Outlits" instance=ExtResource("3_qtitk")]
-position = Vector2(672, 864)
+position = Vector2(608, 864)
 
 [node name="Doors" type="Node" parent="."]
 
@@ -462,3 +463,7 @@ position = Vector2(672, 864)
 
 [node name="Warp2" parent="Warps" instance=ExtResource("8_7e5a8")]
 position = Vector2(736, 864)
+
+[node name="Door" parent="." node_paths=PackedStringArray("plug") instance=ExtResource("9_j25jp")]
+position = Vector2(736, 800)
+plug = NodePath("../Plugs/Plug3")
